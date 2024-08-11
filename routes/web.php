@@ -3,12 +3,39 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\content;
 
+
+
+Route::post('/create', function () {
+    //dd(request()->all());
+    $photo = 'photo'.uniqid().'.'.request('Photo')->extension() ;
+    request('Photo')-> move(public_path('images'), $photo);
+
+    content::create([
+        'Title' => request('Title'),
+        'Photo' => "images/$photo", //request('Photo'),
+        'description' => request('description'),
+        'type' =>  request('type')
+    ]);
+
+    return redirect('/');
+});
+
+
+
+
+
+
+
+
+
+
+
 //---------------- shows بانوراما  page
 Route::get('/', function () {
     return view('home');
 });
-
 //---------------- shows create form page
+
 Route::get('/create', function () {
     return view('create');
 });
