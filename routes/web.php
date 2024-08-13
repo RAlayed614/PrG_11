@@ -1,16 +1,32 @@
 <?php
 
+use App\Http\Controllers\SessionController;
+use App\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\ContentController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
 //---------------- shows بانوراما  page
-Route::view('/','home');
+Route::view('/', 'home');
+
+//---------------- shows تسجيل جديد page
+Route::controller(RegisteredUserController::class)->group(function () {
+    Route::get('/register', 'create');
+    Route::post('/register', 'store');
+});
+
+//---------------- shows تسجيل الدخول/خروج page
+Route::controller(SessionController::class)->group(function () {
+    Route::get('/login', 'create');
+    Route::post('/login', 'store');
+    Route::post('/logout', 'destroy');
+});
 
 //---------------- shows create form page
 Route::view('/create', 'create');
 
 //---------------- controller
-Route::controller(ContentController::class)->group( function () {
+Route::controller(ContentController::class)->group(function () {
     //---------------- stores content
     Route::post('/create', 'create');
     //---------------- returns خدماتنا page with any contents that has the type 0
@@ -30,8 +46,11 @@ Route::controller(ContentController::class)->group( function () {
 Route::view('/about', 'about');
 
 //---------------- shows تواصل معنا page
-Route::view('/contact', 'contact');
-
+Route::controller(ContactController::class)->group(function () {
+    Route::get('/contact', 'create');
+    Route::post('/contact', 'store');
+    Route::delete('/contact/{contact}', 'destroy');
+});
 
 
 //---------------- shows بانوراما القديمه

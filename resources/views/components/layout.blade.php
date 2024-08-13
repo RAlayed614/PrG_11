@@ -26,50 +26,31 @@
                             <img class="h-8 w-8" src="images\logo2.png" alt="بانوراما القصيم">
                         </div>
                         <div class="hidden md:block">
-                            <div class="ml-10 flex items-baseline space-x-4 ">
-                                <!-- space-x-4  Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-
+                            <div class="ml-10 flex items-center px-4">
                                 <x-nav href="/" :active="request()->is('/')"> الرئيسية </x-nav>
                                 <x-nav href="/about" :active="request()->is('about')"> من نحن </x-nav>
                                 <x-nav href="/services" :active="request()->is('services')"> خدماتنا </x-nav>
                                 <x-nav href="/works" :active="request()->is('works')"> عملائنا </x-nav>
                                 <x-nav href="/contact" :active="request()->is('contact')"> تواصل معنا </x-nav>
-
                             </div>
                         </div>
                     </div>
 
                     <div class="hidden md:block">
-                        <div class="ml-4 flex items-center md:ml-6">
-                            <button type="button"
-                                class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                                <span class="absolute -inset-1.5"></span>
-                                <span class="sr-only">View notifications</span>
-                                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                    stroke="currentColor" aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
-                                </svg>
-                            </button>
-
-                            <!-- Profile dropdown -->
-                            <div class="relative ml-3">
-                                <div>
-                                    <a href="/create">
-                                        <button type="button"
-                                            class="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                                            id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-                                            <span class="absolute -inset-1.5"></span>
-                                            <img class="h-8 w-8 " src="images\create.svg" alt="create">
-                                            <span class="sr-only">Open user menu</span>
-                                        </button>
-                                    </a>
-                                </div>
-                            </div>
+                        <div class="ml-1 flex items-center md:ml-2">
+                            @guest
+                                <x-nav href="/register" :active="request()->is('register')">تسجيل جديد</x-nav>
+                                <x-nav href="/login" :active="request()->is('login')">تسجيل الدخول</x-nav>
+                            @endguest
+                            @auth
+                                <x-nav href="/create" :active="request()->is('create')">إضافة عميل/خدمة جديدة</x-nav>
+                                <form method="POST" action="/logout">
+                                    @csrf
+                                    <x-form-button class="bg-red-600 hover:bg-red-500"> خروج </x-form-button>
+                                </form>
+                            @endauth
                         </div>
                     </div>
-
-
 
                     <div class="-mr-2 flex md:hidden">
                         <!-- Mobile menu button -->
@@ -91,41 +72,32 @@
                             </svg>
                         </button>
                     </div>
-
-
                 </div>
             </div>
 
             <!-- Mobile menu, show/hide based on menu state. -->
             <div class="md:hidden" id="mobile-menu">
                 <div class="space-y-4 px-2 pb-3 pt-2 sm:px-3">
-                    <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-
                     <x-nav href="/" :active="request()->is('/')" class="block text-base"> الرئيسية </x-nav>
                     <x-nav href="/about" :active="request()->is('about')" class="block text-base"> من نحن </x-nav>
                     <x-nav href="/services" :active="request()->is('services')" class="block text-base"> خدماتنا </x-nav>
                     <x-nav href="/works" :active="request()->is('works')" class="block text-base"> عملائنا </x-nav>
                     <x-nav href="/contact" :active="request()->is('contact')" class="block text-base"> تواصل معنا </x-nav>
-
                 </div>
-                <div class="border-t border-gray-700 pb-3 pt-4">
-                    <div class="flex items-center px-5">
-                        <div class="ml-3">
-                            <div class="text-base font-medium leading-none text-white">name</div>
-                            <div class="text-sm font-medium leading-none text-gray-400">email</div>
-                        </div>
-                        <button type="button"
-                            class="relative ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                            <span class="absolute -inset-1.5"></span>
-                            <span class="sr-only">View notifications</span>
-                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
-                            </svg>
-                        </button>
 
-                        <a href="/create"> <img class="h-8 w-8" src="images\create.svg" alt="create"> </a>
+                <div class="md:hidden">
+                    <div class="space-y-4 px-2 pb-3 pt-2 sm:px-3">
+                        @guest
+                            <x-nav href="/login" :active="request()->is('login')">تسجيل الدخول</x-nav>
+                            <x-nav href="/register" :active="request()->is('register')">تسجيل جديد</x-nav>
+                        @endguest
+                        @auth
+                            <x-nav href="/create" :active="request()->is('create')">إضافة عميل/خدمة جديدة</x-nav>
+                            <form method="POST" action="/logout">
+                                @csrf
+                                <x-form-button class="bg-red-600 hover:bg-red-500"> خروج </x-form-button>
+                            </form>
+                        @endauth
                     </div>
                 </div>
             </div>
@@ -134,8 +106,8 @@
 
 
         <!-- slotted header -->
-        <header class="bg-white shadow">
-            <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <header class="bg-white shadow ">
+            <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 flex items-center space-x-4 justify-between">
                 <h1 class="text-3xl font-bold tracking-tight text-gray-900"> {{ $heading }} </h1>
             </div>
         </header>

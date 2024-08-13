@@ -25,25 +25,18 @@
             <div class="border-b border-gray-900/10 pb-12">
                 <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                     <div class="sm:col-span-4">
-                        <label for="Title" class="block text-sm font-medium leading-6 text-gray-900">العنوان</label>
+                        <x-form-label for="Title">العنوان</x-form-label>
                         <div class="mt-2">
-                            <div
-                                class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-                                <input type="text" name="Title" id="Title" autocomplete="Title"
-                                    class="block flex-1 border-0 bg-transparent py-1.5 px-3 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                                    placeholder="البرمجة من الصفر" value="{{ $content->Title }}" required>
-                            </div>
-                            @error('Title')
-                                <p class="text-xs text-red-500 font-semibold mt-3"> لا يمكن ترك الحقل فارغًا </p>
-                            @enderror
+                            <x-form-input type="text" name="Title" id="Title" placeholder="البرمجة من الصفر"
+                                value="{{ $content->Title }}" required />
+                            <x-form-error name="Title" />
                         </div>
                     </div>
 
                     <div class="col-span-full">
-                        <label for="description" class="block text-sm font-medium leading-6 text-gray-900">النص</label>
+                        <x-form-label for="description">النص</x-form-label>
                         <div class="mt-2">
-                            <input type="text" id="description" name="description"
-                                value="{{ $content->description }}"
+                            <input value="{{ $content->description }}"
                                 placeholder="نقوم بتحويل فكرتك إلى موقع إلكتروني او تطبيق جوال مع سكريبت مبرمج من الصفر."
                                 class="block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                             {{-- <textarea id="description" name="description" rows="3" value="{{ $content->description }}"
@@ -54,7 +47,7 @@
                     </div>
 
                     <div class="col-span-full">
-                        <label for="Photo" class="block text-sm font-medium leading-6 text-gray-900">الصورة</label>
+                        <x-form-label for="Photo">الصورة</x-form-label>
                         <div
                             class="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
                             <div class="text-center">
@@ -70,9 +63,7 @@
 
                             </div>
                         </div>
-                        @error('Photo')
-                            <p class="text-xs text-red-500 font-semibold mt-3"> لا يمكن ترك الحقل فارغًا </p>
-                        @enderror
+                        <x-form-error name="Photo" />
                     </div>
                 </div>
             </div>
@@ -86,20 +77,16 @@
                                 <input id="type0" name="type" type="radio" value="0"
                                     class="form-check-input h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
                                     required>
-                                <label for="type0"
-                                    class="form-check-label block text-sm font-medium leading-6 text-gray-900">خدماتنا</label>
+                                <x-form-label for="type0" class="form-check-label">خدماتنا</x-form-label>
                             </div>
                             <div class="form-check flex items-center gap-x-3">
                                 <input id="type1" name="type" type="radio" value="1"
                                     class="form-check-input h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
                                     required>
-                                <label for="type1"
-                                    class="form-check-label block text-sm font-medium leading-6 text-gray-900">عملائنا</label>
+                                <x-form-label for="type1" class="form-check-label">عملائنا</x-form-label>
                             </div>
                         </div>
-                        @error('type')
-                            <p class="text-xs text-red-500 font-semibold mt-3"> لا يمكن ترك الحقل فارغًا </p>
-                        @enderror
+                        <x-form-error name="type" />
                     </fieldset>
                 </div>
             </div>
@@ -107,16 +94,12 @@
 
         <div class="mt-6 flex items-center justify-between gap-x-6">
             <div class="flex items-center">
-                <button type="submit"
-                    class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">حفظ
-                    التعديل</button>
+                <x-form-button> حفظ التعديل </x-form-button>
                 <a href="/" class="px-3 text-sm font-semibold leading-6 text-gray-900">إلغاء</a>
             </div>
             <div class="flex items-center gap-x-6">
                 <div>
-                    <button type="submit" form="delete-form"
-                        class="rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">حذف
-                        نهائي</button>
+                    <x-form-button form="delete-form" class="bg-red-600 hover:bg-red-500"> حذف نهائي </x-form-button>
                 </div>
             </div>
         </div>
