@@ -1,0 +1,639 @@
+/* ======================START-STYLE-ABOUT-PAGE======================= */
+.custom-article {
+    display: block;
+    width: 100%;
+    margin-bottom: 14rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding: 4rem 0px;
+  }
+
+.custom-image {
+    /* border-radius: 0.5rem; */
+    width: 70%;
+}
+
+.custom-paragraph {
+    padding-top: 2rem;
+    padding-bottom: 0rem;
+    font-size: 1.3rem;
+    line-height: 40px;
+    max-width: 80%;
+    font-weight: 500;
+    color:#595959;
+
+}
+.custom-paragraph-1 {
+    padding-top: 6rem;
+    padding-bottom: 0rem;
+    font-size: 1.3rem;
+    line-height: 40px;
+    max-width: 80%;
+}
+/* ======================RESPONSIVE-STYLE-ABOUT-PAGE======================= */
+@media (max-width: 767px) {
+  .custom-article {
+    padding: 6rem 0px 3rem 0px;
+  }
+    .custom-paragraph {
+        font-size: 1.1rem;
+        line-height: 35px;
+        max-width: 90%;
+    }
+    .custom-image {
+      width: 90%;
+  }
+}
+.text-btn{
+  color: white !important;
+  text-decoration: none !important;
+}
+.container-option{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  width: 7%;
+}
+/* ======================END-STYLE-ABOUT-PAGE======================= */
+
+
+
+/* ======================START-STYLE-CONTACT-PAGE======================= */
+.container-contact-us{
+    /* height: 90vh; */
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem 10% 0px 0px;
+}
+.form-contact-us{
+    width: 100%;
+    height: 80%;
+    background-color: #b3b0b081;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 15px;
+    padding: 1rem 2rem;
+}
+.container-field{
+width: 100%;
+
+}
+.lable-style{
+    font-size: 1.2rem;
+    padding: 7px;
+    color: #000d46c9;
+    font-weight: 500;
+    width: 95%;
+    /* text-align: left; */
+}
+.input-style,.message-content{
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: transparent;
+    box-shadow: 0px 0px 4px 0px #03004b61;
+    width:95%;
+    padding: 10px 10px;
+    font-size: 1.2rem;
+    color: #000d46c9;
+    font-weight: 500;
+    margin: 10px 0px;
+    transition: 200ms all ease-in;
+    /* text-align: end; */
+}
+.input-style:focus{
+    width: 97%;
+    padding: 10px 10px;
+    box-shadow: 0px 0px 7px 0px #0088ff8e;
+}
+.message-content:focus{
+    width: 95%;
+    padding: 10px 10px;
+    box-shadow: 0px 0px 7px 0px #0088ff8e;
+}
+.container-btns{
+    display: flex;
+    width: 100%;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+}
+/* .style-btn-send{
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.208);
+    padding: 0px 15px;
+    margin-right: 3rem;
+    transition: 100ms all ease-in;
+    &:hover{
+       background-color: rgba(0, 0, 0, 0.203);
+       
+    }
+} */
+.bttn-form-send{
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px 10%;
+  transition: 150ms all ease-in;
+  &:hover{
+    color: white;
+    background-color: #f4922b;
+
+  }
+}
+.container-icons-sm{
+    width: 100%;
+    height: 50px;
+    /* background: red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    padding: 0px 20%;
+    margin-top: 2rem;
+}
+.sm-icon{
+font-size: 30px;
+color: black;
+transition: 100ms all ease-in;
+&:hover{
+    color: #f4922b;
+}
+}
+/* ======================RESPONSIVE-STYLE-CONTACT-PAGE======================= */
+@media (max-width: 767px) {
+    .container-contact-us{
+      padding: 8rem 2% 0px 2%;
+    }
+    .form-contact-us{
+        padding: 10px;
+    }
+    .input-style,.message-content{
+        width: 100%;
+    }
+    .input-style:focus{
+        width: 100%;
+    }
+    .message-content:focus{
+        width: 100%;
+    }
+    .lable-style{
+        width: 98%;
+    }
+    .container-icons-sm{
+        padding: 0px 10%;
+    }
+}
+/* ======================END-STYLE-CONTACT-PAGE======================= */
+
+
+
+
+
+/* ======================START-STYLE-CREATE-PAGE======================= */
+.form-create{
+  padding-top:5rem;
+}
+.choose-type{
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+    padding: 3rem 0px 1rem 0px;
+    font-weight: 700;
+    color: #000d46c9;
+}
+.container-option{
+    display: flex; 
+    align-items: center; 
+}
+.input-radio-style{
+    height: 1rem;
+    width: 1rem; 
+    border-color: #CBD5E0; 
+    color: #4F46E5;
+}
+.input-radio-style:focus{
+    ring-color: #4F46E5;
+}
+.container-btns-create-page{
+    margin-top: 2rem;
+}
+.upload-image{
+    padding: 3rem;
+}
+/* ======================END-STYLE-CREATE-PAGE======================= */
+
+
+
+
+
+/* ======================START-STYLE-HOME-PAGE======================= */
+.container-slider{
+    width: 100%;
+    height: 100vh;
+    /* background-color: red; */
+    position: relative;
+}
+.filter-slider-home{
+    width: 100%;
+    height: 100%;
+    background-color: #000000a1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.style-slider{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.title-slider{
+    font-size: 3rem;
+    color: white;
+    font-weight: 700;
+    max-width: 50%;
+    line-height: 70px;
+    text-align: center;
+
+}
+/* ======================RESPONSIVE-STYLE-HOME-PAGE======================= */
+@media (max-width: 992px) {
+    .title-slider{
+        font-size: 2.5rem;
+        font-weight:600;
+        max-width: 55%;
+        line-height: 60px;
+    }
+}
+@media (max-width: 767px) {
+    .container-slider{
+        width: 100%;
+        height: 100vh;
+    }
+    .title-slider{
+        font-size: 2rem;
+        font-weight:500;
+        max-width: 90%;
+        line-height: 50px;
+    }
+}
+/* ======================END-STYLE-HOME-PAGE======================= */
+
+
+
+
+/* ======================START-STYLE-HEADER-PAGE======================= */
+.header-main{
+    width: 100%;
+    height: 10vh;
+    background-color:#6e5959;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    z-index: 2 !important;
+  }
+  .container-logo{
+    width: 20%;
+    height: 100%;
+    /* background-color: rgb(15, 15, 15); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .image-logo-header{
+    width: 13%;
+  }
+  .container-links{
+    width: 45%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0px 30px;
+  }
+  .link-header{
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: 100ms all ease-in;
+  }
+  .link-header:hover{
+    font-size: 1.2rem;
+    color: #f4922b;
+  }
+  .link-services{
+    position: relative;
+    margin-bottom: 1rem;
+    transition: 200ms all ease-in;
+  
+  
+  }
+  .container-dropdown{
+    position: absolute;
+    top: 5vh;
+    right: -3rem;
+    width: 250px;
+    height: auto;
+    background-color: #1d1d1d;
+    visibility: hidden;
+    opacity: 0;
+    transition: 200ms all ease-in;
+    padding: 30px 20px;
+  }
+  .link-services:hover .container-dropdown{
+    visibility: visible;
+    opacity: 1;
+    transition: 200ms all ease-in;
+  }
+    .service-name{
+      text-decoration: none; 
+      color: white;
+      font-size: 1.3rem;
+      transition: 200ms all ease-in;
+    }
+    .service-name:hover{
+      padding-left: 10px;
+      color: rgb(174, 133, 38);
+    }
+  
+  .container-icon-menu{
+    width: 35%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+  }
+  
+  .style-icon-media-header{
+    color: white;
+    text-decoration: none;
+    transition: 100ms all ease-in;
+    padding-left: 1rem;
+    font-size: 1.1rem;
+  }
+  .style-icon-media-header:hover{
+    color:#f4922b;
+    text-decoration: none;
+   
+  }
+  .icon-menu-header{
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
+    visibility: hidden;
+  }
+  .btn-loginn{
+    font-size: 1rem;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 200ms all ease-in;
+    color: white;
+    padding: 5px 20px;
+    background-color: transparent;
+    &:hover{
+      border: none;
+      background-color: #f4922b;
+    }
+  }
+/* ======================RESPONSIVE-STYLE-HEADER-PAGE======================= */
+@media (max-width: 992px){
+  .btn-loginn{
+    display: none;
+
+  }
+    .link-header{
+  display: none;
+    
+    }
+    .style-icon-media-header{
+      display: none;
+  
+    }
+    .icon-menu-header{
+      visibility: visible;
+    }
+    .image-logo-header{
+      width: 20%;
+    }
+  }
+  @media (max-width: 767px){
+   
+    .link-header{
+  display: none;
+    
+    }
+    .style-icon-media-header{
+      display: none;
+    }
+    .icon-menu-header{
+      font-size: 2rem;
+      visibility: visible;
+    }
+    .image-logo-header{
+      width: 50%;
+    }
+    .btn-login{
+      display: none;
+
+    }
+  }
+/* ======================END-STYLE-HEADER-PAGE======================= */
+
+
+
+
+
+/* ======================START-STYLE-SERVICES-PAGE======================= */
+
+ .container-services{
+  background-color: #d5d5d5;
+  padding: 5rem 15%;
+
+ }
+ .container-service{
+  background-color: #ffffff;
+  padding: 50px;
+  border-radius: 10px;
+  margin: 2rem;
+ }
+ .title-service{
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+ }
+ .image-service{
+  border-radius: 5px;
+  width: 100%;
+  object-fit: cover;
+ }
+ .desc-service{
+ font-size: 1.2rem;
+  margin-top: 1rem;
+ }
+ @media (max-width: 992px){
+
+  }
+  @media (max-width: 767px){
+    .container-services{
+   
+      padding: 5rem 1%;
+    
+     }
+    .container-service{
+      padding: 10px;
+      border-radius: 10px;
+      margin: 2rem;
+     }
+     /* .title-service{
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+     } */
+     .image-service{
+     }
+     .desc-service{
+     font-size: 1.2rem;
+      margin-top: 1rem;
+     }
+
+  }
+/* ADVERTISERS SERVICE CARD ENDED */
+
+
+ /* ======================END-STYLE-SERVICES-PAGE======================= */
+
+
+
+.menu-container {
+  position: relative;
+}
+
+#menu-toggle {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#menu {
+  display: none;
+  background-color: #444;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 200px;
+  border-radius: 4px;
+}
+
+#menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#menu ul li {
+  border-bottom: 1px solid #555;
+}
+
+#menu ul li a {
+  color: white;
+  padding: 10px 20px;
+  display: block;
+  text-decoration: none;
+}
+
+#menu ul li a:hover {
+  background-color: #555;
+}
+
+#toogleMenu{
+  width: 30px;
+  height: 30px;
+ /* background-color: red; */
+ display: none;
+}
+#container-menu{
+  width: 100%;
+  height: 90vh;
+  /* background-color: #1d1d1d; */
+  position: absolute;
+  top: 10vh;
+  right: 0px;
+  display: none;
+}
+.mystyle{
+  background-color: rgb(255, 255, 255) !important; 
+}
+.contaner-links-menu{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.47);
+  display: flex;
+  flex-direction: row;
+}
+.right-container-links{
+  width: 40%;
+  height: 100%;
+  background-color: rgb(14, 14, 14);
+  padding: 20px 0px 0px 50px;
+  /* margin-left: -400px; */
+  animation-name: toggle-menu-animation;
+  animation-duration: 1s;
+ 
+}
+.link-header-menu{
+  font-size: 1.2rem;
+  color: white;
+  padding-bottom: 1rem;
+  transition: 200ms all ease-in;
+  cursor: pointer;
+
+}
+.link-header-menu:hover{
+  padding-bottom: 1rem;
+ padding-left: 1rem;
+ font-size: 1.2rem;
+  color: rgb(254, 171, 5);
+
+}
+@keyframes toggle-menu-animation {
+  0%   {margin-left: -400px;}
+  100% {margin-left: 0px;}
+}
+#toogleMenu i{
+  color: white;
+  font-size: 2rem;
+}
+@media (max-width: 992px){
+  #toogleMenu{
+    display: block;
+  }
+}
+@media (max-width: 550px){
+
+  .right-container-links{
+    width: 70%;
+    padding: 30px 30px 0px 0px;
+  }
+}
+
+
+
+

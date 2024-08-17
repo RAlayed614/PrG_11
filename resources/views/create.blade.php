@@ -17,15 +17,15 @@
         ```
     -->
 
-    <form enctype="multipart/form-data" method="POST" action="/create">
+    <form enctype="multipart/form-data" method="POST" action="/create" class="form-create">
         @csrf
 
-        <div class="space-y-12">
-            <div class="border-b border-gray-900/10 pb-12">
-                <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-                    <div class="sm:col-span-4">
+        <div>
+            <div >
+                <div >
+                    <div>
                         <x-form-label for="Title">العنوان</x-form-label>
-                        <div class="mt-2">
+                        <div >
                             <x-form-input type="text" name="Title" id="Title" placeholder="البرمجة من الصفر"
                                 required />
                             <x-form-error name="Title" />
@@ -37,7 +37,7 @@
                         <div class="mt-2">
                             <textarea id="description" name="description" rows="3"
                                 placeholder="نقوم بتحويل فكرتك إلى موقع إلكتروني او تطبيق جوال مع سكريبت مبرمج من الصفر."
-                                class="block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
+                                class="message-content"></textarea>
                         </div>
                         <p class="mt-3 text-sm leading-6 text-gray-600"></p>
                     </div>
@@ -45,13 +45,13 @@
                     <div class="col-span-full">
                         <x-form-label for="Photo">الصورة</x-form-label>
                         <div
-                            class="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
+                        >
                             <div class="text-center">
                                 <div class="mt-4 flex text-sm leading-6 text-gray-600">
                                     <label for="Photo"
                                         class="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500">
                                         <span>اضغط هنا لرفع الصورة</span>
-                                        <input id="Photo" name="Photo" type="file" class="sr-only" required>
+                                        <input id="Photo" name="Photo" type="file" class="sr-only upload-image" required>
                                     </label>
                                 </div>
                             </div>
@@ -61,18 +61,18 @@
                 </div>
             </div>
 
-            <div class="border-b border-gray-900/10 pb-12">
-                <div class="mt-10 space-y-10">
+            <div >
+                <div >
                     <fieldset>
-                        <legend class="text-sm font-semibold leading-6 text-gray-900"> اختر النوع </legend>
-                        <div class="mt-6 space-y-6">
-                            <div class="form-check flex items-center gap-x-3">
+                        <legend class="choose-type"> اختر النوع </legend>
+                        <div >
+                            <div class="container-option">
                                 <input id="type0" name="type" type="radio" value="0"
-                                    class="form-check-input h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                                    class="input-radio-style"
                                     required>
                                 <x-form-label for="type0" class="form-check-label">خدماتنا</x-form-label>
                             </div>
-                            <div class="form-check flex items-center gap-x-3">
+                            <div class="container-option">
                                 <input id="type1" name="type" type="radio" value="1"
                                     class="form-check-input h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
                                     required>
@@ -85,9 +85,9 @@
             </div>
         </div>
 
-        <div class="mt-6 flex items-center justify-begaining gap-x-6">
+        <div class="container-btns container-btns-create-page">
             <x-form-button> حفظ </x-form-button>
-            <a href="/" class="px-3 text-sm font-semibold leading-6 text-gray-900">إلغاء</a>
+            <a href="/" class="style-btn-send">إلغاء</a>
         </div>
     </form>
 

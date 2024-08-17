@@ -10,6 +10,9 @@
     <noscript>
         <link rel="stylesheet" href="assets/css/noscript.css" />
     </noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-abc123" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+
 </head>
 
 <body class="is-preload">

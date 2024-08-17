@@ -2,12 +2,12 @@
     <x-slot:heading>
         عملائنا
     </x-slot:heading>
-    <div class="space-y-4 device-width">
+    <div class="container-services">
         @foreach ($contents as $content)
-            <div class="block px-4 py-6">
-                <h2 class="py-4">{{ $content->Title }}</h2>
-                <img class="rounded w-full" src="{{ $content->Photo }}" alt="{{ $content->Title }}">
-                <p class="py-4">
+            <div class="container-service">
+                <h2 class="title-service">{{ $content->Title }}</h2>
+                <img class="image-service" src="{{ $content->Photo }}" alt="{{ $content->Title }}">
+                <p class="desc-service">
                     {{ $content->description }}
                 </p>
                 @auth
